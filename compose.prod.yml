@@ -9,13 +9,15 @@ services:
     command: gunicorn --worker-class gevent --workers 8 --bind 0.0.0.0:5000 app:app --max-requests 10000 --timeout 600 --keep-alive 5 --log-level info
     volumes:
       - "./instance:/app/instance"
+    expose:
+      - 5000
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=app_network"
-      - "traefik.http.routers.backend.entrypoints=websecure"
-      - "traefik.http.services.backend.loadbalancer.server.port=5000"
-      - "traefik.http.routers.backend.rule=Host(`cyrils-website.brainstorm-idea.ru`)"
-      - "traefik.http.routers.backend.tls.certresolver=lets-encrypt"
+      - "traefik.http.routers.backend-test.entrypoints=websecure"
+      - "traefik.http.services.backend-test.loadbalancer.server.port=5000"
+      - "traefik.http.routers.backend-test.rule=Host(`cyrils-website.brainstorm-idea.ru`)"
+      - "traefik.http.routers.backend-test.tls.certresolver=lets-encrypt"
     networks:
       - app-network
 

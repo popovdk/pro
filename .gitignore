@@ -8,5 +8,5 @@ htmlcov/
 docs/_build/
 dist/
 venv/
-instance
+instance/*.db
 venv1

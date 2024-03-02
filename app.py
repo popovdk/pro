@@ -17,6 +17,8 @@ class Article(db.Model):
     def __repr__(self):
         return '<Arcticle %r>' % self.id
 
+with app.app_context():
+    db.create_all()
 
 @app.route('/')
 @app.route('/home')

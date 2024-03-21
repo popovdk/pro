@@ -26,9 +26,33 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/pro_nas')
-def pro_nas():
+@app.route('/memorial')
+def memorial():
     return render_template('pro_nas.html')
+
+@app.route('/kosmos')
+def kosmos():
+    return render_template('Kosmonavti.html')
+
+@app.route('/limonariy')
+def limonariy():
+    return render_template('limonariy.html')
+
+@app.route('/utali')
+def utali():
+    return render_template('utali.html')
+
+@app.route('/most')
+def most():
+    return render_template('most.html')
+
+@app.route('/Sobor')
+def Sobor():
+    return render_template('Sobor.html')
+
+@app.route('/Musey')
+def Musey():
+    return render_template('Musey.html')
 
 
 @app.route('/posts')
